@@ -53,6 +53,7 @@ TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/msm8937
 # Encryption
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 
 # Keystore
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
