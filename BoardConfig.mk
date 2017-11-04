@@ -91,7 +91,6 @@ TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := true
 TW_INCLUDE_NTFS_3G := true
-TW_IGNORE_MISC_WIPE_DATA := true
 TW_NEW_ION_HEAP := true
 
 # Additional Asian languages
