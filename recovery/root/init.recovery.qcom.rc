@@ -4,6 +4,13 @@ on init
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    
+    #Create directories for Fingerprint
+    mkdir /data/misc/stargate 0770 system system
+    mkdir /data/misc/stargate/bg_estimation 0770 system system
+    mkdir /data/misc/stargate/calib_test 0770 system system
+    mkdir /data/misc/stargate/database 0770 system system
+    mkdir /data/fpc 0770 system system
 
 service qseecomd /sbin/qseecomd
     oneshot
@@ -11,6 +18,42 @@ service qseecomd /sbin/qseecomd
     user root
     group root
     seclabel u:r:recovery:s0
+
+service fingerprintd /sbin/fingerprintd
+    class late_start
+    socket fpce stream 0666 system system
+    user root
+    group root sdcard_rw
+    root root
+    disabled
+    setenv LD_LIBRARY_PATH /lib:/lib64
+
+service gx_fpd /system/bin/gx_fpd
+    class core
+    user root
+    group root root
+    oneshot
+    disabled
+    setenv LD_LIBRARY_PATH /lib:/lib64
+
+on property:persist.sys.fp.vendor=switchf
+    stop gx_fpd
+    setprop persist.sys.fp.vendor searchf
+    start fingerprintd
+    setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    setprop persist.sys.fp.onstart=1
+
+on property:persist.sys.fp.vendor=goodix
+    setprop ro.boot.fpsensor gdx
+    setprop ro.hardware.fingerprint goodix
+    setprop persist.sys.fp.onstart=0
+
+on property:persist.sys.fp.onstart=0
+   start gx_fpd
+
+on property:persist.sys.fp.onstart=1
+   start fingerprintd
 
 on property:ro.crypto.state=encrypted
     start qseecomd
