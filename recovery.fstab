@@ -25,7 +25,7 @@
 
 /system          ext4    /dev/block/bootdevice/by-name/system               flags=fsflags="barrier=1"
 /system_image    emmc    /dev/block/bootdevice/by-name/system               flags=backup=1
-/data            ext4    /dev/block/bootdevice/by-name/userdata             flags=length=-16384;fsflags="noatime,nosuid,nodev,barrier=1,noauto_da_alloc"
+/data            ext4    /dev/block/bootdevice/by-name/userdata             flags=fsflags="noatime,nosuid,nodev,barrier=1,noauto_da_alloc"
 /cache           ext4    /dev/block/bootdevice/by-name/cache                flags=fsflags="noatime,nosuid,nodev,barrier=1,noauto_da_alloc"
 /cust            ext4    /dev/block/bootdevice/by-name/cust                 flags=backup=1;display="Cust"
 /persist         ext4    /dev/block/bootdevice/by-name/persist              flags=backup=1;display="Persist";fsflags="noatime,nosuid,nodev,barrier=1,noauto_da_alloc"
