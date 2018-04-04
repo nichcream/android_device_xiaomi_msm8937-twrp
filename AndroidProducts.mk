@@ -17,3 +17,7 @@
 PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/omni_land.mk \
 	$(LOCAL_DIR)/omni_santoni.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_land-userdebug \
+    omni_santoni-userdebug
