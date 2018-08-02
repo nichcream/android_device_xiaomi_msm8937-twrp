@@ -124,7 +124,12 @@ static int load_qseecom_library()
         return loaded_library;
 
 #ifdef __LP64__
+#if 0
     void * handle = dlopen("/vendor/lib64/libQSEEComAPI.so", RTLD_NOW);
+#else
+    /* HAX: Free our /vendor folder for mounting */
+    void * handle = dlopen("/odm/lib64/libQSEEComAPI.so", RTLD_NOW);
+#endif
 #else
     void * handle = dlopen("/vendor/lib/libQSEEComAPI.so", RTLD_NOW);
 #endif

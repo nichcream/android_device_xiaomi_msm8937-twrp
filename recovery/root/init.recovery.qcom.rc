@@ -12,6 +12,7 @@ service qseecomd /sbin/qseecomd
     disabled
     user root
     group root
+    setenv LD_LIBRARY_PATH "/sbin:/odm/lib64"
     seclabel u:r:recovery:s0
 
 on property:ro.crypto.state=encrypted
