@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/land
+DEVICE_PATH := device/xiaomi/santoni
 
 ALLOW_MISSING_DEPENDENCIES := true
 
