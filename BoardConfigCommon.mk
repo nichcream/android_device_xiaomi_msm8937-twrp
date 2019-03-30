@@ -48,9 +48,6 @@ BOARD_KERNEL_CMDLINE 		:= androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hc
 BOARD_KERNEL_PAGESIZE 		:=  2048
 BOARD_MKBOOTIMG_ARGS 		:= --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
 
-# Clang
-INTERNAL_LOCAL_CLANG_EXCEPTION_PROJECTS := external/busybox/
-
 # Encryption
 TW_INCLUDE_CRYPTO := true
 TARGET_HW_DISK_ENCRYPTION := true
@@ -86,6 +83,9 @@ RECOVERY_SDCARD_ON_DATA := true
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
+
+# Toolbox
+TW_USE_TOOLBOX := true
 
 # TWRP specific flags
 TW_THEME := portrait_hdpi
