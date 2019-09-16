@@ -14,7 +14,7 @@ PRODUCT_PACKAGES += \
 
 # Kernel
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/kernel_satoni:kernel
+    $(LOCAL_PATH)/kernel_santoni:kernel
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := Xiaomi

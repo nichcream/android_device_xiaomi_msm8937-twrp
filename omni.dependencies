@@ -2,5 +2,11 @@
   {
     "repository":  "android_external_busybox",
     "target_path": "external/busybox"
-  }  
+  },
+  {
+    "remote": "github",
+    "repository": "TeamWin/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "revision": "android-8.1"
+  }
 ]
