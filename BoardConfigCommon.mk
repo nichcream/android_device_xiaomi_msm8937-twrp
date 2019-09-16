@@ -88,6 +88,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # TWRP specific flags
 TW_THEME := portrait_hdpi
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone7/temp"
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 120
